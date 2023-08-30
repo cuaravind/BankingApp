@@ -1,0 +1,96 @@
+<!-- <section class="register-block" style="justify-content:center">
+  <div class="container">
+     <div>
+        <div class="col register-sec">
+           <h2 class="text-center">Add Third Party</h2>
+<form
+
+            action=""
+            #f="ngForm"
+            novalidate
+            (ngSubmit)="f.form.valid&&onsubmit()"
+            >
+            <div>
+              <label>Name</label><br>
+
+              <input type="text"  name="name"   [(ngModel)]="data.name" #name="ngModel" required   >
+              <span  *ngIf="this.submit&&name.errors?.['required']" >
+                  Name is required.
+              </span>
+           </div>
+           <div>
+            <label>Account No</label><br>
+
+            <input type="text"  name="account_no"  [(ngModel)]="data.account_no" #acc="ngModel" required   minlength="8">
+            <span   *ngIf="this.submit&&acc.errors?.['required']">
+                account number is required.
+            </span>
+            <span   *ngIf="this.submit&&acc.errors?.['minlength']">
+              Minimum length of account number is 8 characters
+          </span>
+         </div>
+         <div>
+          <label>Bank Name</label><br>
+          <input   type="text"  name="Bank_name"  [(ngModel)]="data.Bank_name" #bname="ngModel" required minlength="8" >
+          <span   *ngIf="this.submit&&bname.errors?.['required']">
+                Bank name is required.
+          </span>
+         </div>
+         <div>
+          <label >Branch</label><br>
+
+          <input type="text"  name="branch"   [(ngModel)]="data.branch" #branch="ngModel" required   >
+          <span  *ngIf="this.submit&&name.errors?.['required']" >
+              branch is required.
+          </span>
+         </div>
+         <div>
+          <label>IFSC code</label><br>
+          <input type="text"  name="IFSC"   [(ngModel)]="data.IFSC_CODE"#IFSC="ngModel" required   >
+          <span  *ngIf="this.submit&&name.errors?.['required']" >
+              IFSC code is required.
+          </span>
+       </div>
+       <div>
+        <span  *ngIf="this.errormessage" >
+           <p [innerText]="this.errormessage"></p>
+        </span>
+        <div   *ngIf="this.loading">
+          <div>
+            <span>Loading...</span>
+          </div>
+        </div>
+        </div>
+        <div>
+          <input type="submit" class="btn btn-login float-right"  value="Register" (click)="submit=true"   >
+       </div>
+  </form>
+
+
+
+      </div>
+
+   </div>
+
+
+</div>
+</section> -->
+<div style="text-align: center;" class="body">
+<form  (submit)="onsubmit()">
+  <br>
+  <br>
+  <br>
+  <label>Name</label><br>
+  <input type="text" name="name" [(ngModel)]="data.name" required><br>
+  <label>Account No</label><br>
+  <input type="number" name="acc_no" [(ngModel)]="data.account_no" required><br>
+  <label>Bank name</label><br>
+  <input type="text" name="bank" [(ngModel)]="data.Bank_name" required><br>
+  <label>IFSC Code</label><br>
+  <input type="text" name="ifsc" [(ngModel)]="data.IFSC_CODE" required><br>
+  <label>Branch</label><br>
+  <input type="text" name="branch" [(ngModel)]="data.branch" required><br>
+  <br>
+  <button type="submit" class="btn btn-success">Submit</button>
+</form>
+</div>

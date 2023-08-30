@@ -1,0 +1,48 @@
+
+.body {
+  background-image: url("https://images.pexels.com/photos/1602726/pexels-photo-1602726.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2");
+  height: 100vh;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center center;
+  /* background-attachment: fixed; */
+
+
+}
+/* .card{
+flex-basis: calc(33.33% - 20px);
+background-color:lavender;
+border-radius: 10px;
+box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+padding: 30px;
+margin-bottom: 30px;
+box-sizing: border-box;
+}
+.container {
+  display: flex;
+  justify-content: space-between;
+} */
+.container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.card {
+  flex-basis: calc(25% - 20px); /* to display 4 cards in a row */
+  /* modify the margin-bottom value to adjust the distance between cards */
+  margin-bottom: 30px;
+  background-color: #3f51b5;
+}
+
+@media (max-width: 768px) {
+  .card {
+    flex-basis: calc(33.33% - 20px); /* to display 3 cards in a row on smaller screens */
+  }
+}
+.btn-custom {
+  font-size: 20px;
+  padding: 30px 30px;
+  background-color: #3f51b5;
+}
+

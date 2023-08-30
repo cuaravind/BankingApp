@@ -1,0 +1,64 @@
+
+<div id="pdf-contenet">
+  <table>
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Account No</th>
+        <th>Bank Name</th>
+        <th>Branch</th>
+        <th>IFSC code</th>
+        <th>Edit</th>
+        <th>Action</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let transaction of data">
+        <td>
+          <div *ngIf="transaction.isEdit">
+            <input type="text" class="form-control" [(ngModel)]="transaction.name">
+          </div>
+          <div *ngIf="!transaction.isEdit">
+            {{ transaction.name}}
+          </div>
+        </td>
+
+        <td>{{ transaction.account_no }}</td>
+        <td>{{ transaction.Bank_name }}</td>
+        <!-- <td>{{ transaction.branch }}</td> -->
+        <td>
+          <div *ngIf="transaction.isEdit">
+            <input type="text" class="form-control" [(ngModel)]="transaction.branch">
+          </div>
+          <div *ngIf="!transaction.isEdit">
+            {{ transaction.branch}}
+          </div>
+        </td>
+
+        <!-- <td>{{ transaction.IFSC_CODE}}</td> -->
+        <td>
+          <div *ngIf="transaction.isEdit">
+            <input type="text" class="form-control" [(ngModel)]="transaction.IFSC_CODE">
+          </div>
+          <div *ngIf="!transaction.isEdit">
+            {{ transaction.IFSC_CODE}}
+          </div>
+        </td>
+        <td>
+          <div *ngIf="transaction.isEdit">
+            <button type="button" class="btn btn-primary" (click)="update(transaction.adder_id,transaction.account_no)">Update</button>
+            <button type="button" class="btn btn-primary" (click)="transaction.isEdit = false">Cancel</button>
+          </div>
+          <div *ngIf="!transaction.isEdit">
+
+            <button type="button" class="btn btn-primary" (click)="onEdit(transaction)">EDIT</button>
+          </div>
+        </td>
+        <td>
+          <button type="button" class="btn btn-danger" (click)="delete(transaction.adder_id,transaction.account_no)">DELETE</button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+

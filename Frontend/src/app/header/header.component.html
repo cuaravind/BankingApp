@@ -1,0 +1,28 @@
+<!-- <!doctype html>
+<html>
+<h1>STL Digital Banking</h1>
+<a href="login">Login</a><br>
+<a href="signup">Signup</a>
+<router-outlet></router-outlet> -->
+
+
+<div class="navbar navbar-default" style="background-color:#3f51b5">
+  <div class="container-fluid">
+
+        <div  class="navbar-header">
+            <a href="#" class="navbar-brand" style="color:lavender">STL Digital Banking </a>
+          </div>
+          <div>
+            <p  style="color:lavender;font: size 40px;"  *ngIf="userName">Welcome, {{ userName }}!</p>
+          </div>
+          <div class="footer" style="color: black; text-align:center; background-color:#3f51b5">
+            <div class="footer-links">
+
+              <!-- <p  style="color:lavender;font: size 20px;"  *ngIf="userName">Welcome, {{ userName }}!</p> -->
+              <a href="login" *ngIf="checkcondition()" style="color: lavender;">Login</a>
+              <a href="signup" *ngIf="checkcondition()" style="color: lavender;">Sign-in</a>
+              <a href="login" *ngIf="checkcondition()" style="color: lavender;">Logout</a>
+              <a href="#" *ngIf="checkcondition()" style="color: lavender;">Contact Us</a>
+            </div>
+  </div>
+</div>

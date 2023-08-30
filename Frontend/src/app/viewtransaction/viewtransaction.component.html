@@ -1,0 +1,29 @@
+
+<div class="create-pdf" id="content" #content>
+  <table>
+    <thead>
+      <tr>
+        <th>Transaction ID</th>
+        <th>Amount</th>
+        <th>Sender A/c</th>
+        <th>Receiver A/c</th>
+
+        <th>Date</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let transaction of data">
+        <td>{{ transaction.transaction_id }}</td>
+        <td>{{ transaction.amount }}</td>
+        <td>{{ transaction.sender_account_number }}</td>
+        <td>{{ transaction.receiver_account_number }}</td>
+
+        <td>{{ transaction.date }}</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+<div style="text-align: center;">
+  <button (click)="makePDF()" style="background-color:cadetblue; color: white; border: none; padding: 15px 32px; text-align: center; text-decoration: none; display: inline-block; font-size: 16px; margin: 4px 2px; cursor: pointer;">Generate PDF</button>
+</div>
+
